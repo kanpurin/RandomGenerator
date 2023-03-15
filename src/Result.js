@@ -21,11 +21,14 @@ function Result(props) {
 	return (
     <div className="input-group m-3">
       <textarea className="form-control" value={textTrim(props.array.join(props.separate),1000)} rows={props.rows} readOnly/>
-      <ToolTip content={text} position='top'>
-        <button type="button" className="btn btn-outline-secondary" onClick={doCopy(props.array.join(props.separate))}>
+      {/* <ToolTip content={text} position='top'>
+        <button type="button" className="btn btn-outline-secondary" onClick={() => doCopy(props.array.join(props.separate))}>
           <i className="bi-clipboard-plus"></i>
         </button>
-      </ToolTip>
+      </ToolTip> */}
+      <button type="button" className="btn btn-outline-secondary" onClick={() => doCopy(props.array.join(props.separate))}>
+        <i className="bi-clipboard-plus"></i>
+      </button>
     </div>
 	)
 }

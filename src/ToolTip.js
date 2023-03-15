@@ -10,6 +10,7 @@ function ToolTip({children, content, position}) {
   if (posOption.includes(position)) {
     cName = 'tooltip-' + position;
   }
+  
   return (
     <div className="tooltip-container">
       <div 

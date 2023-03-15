@@ -87,7 +87,6 @@ function RandomLabeledTree() {
         }
 			</div>
       <Result array={array} separate="" rows="3"/>
-      
 		</div>
 	)
 }
