@@ -2,7 +2,7 @@
   "browser": {
     "fs": false
   },
-  "homepage": "https://kanpurin.github.io/RandomGenerator/",
+  "//homepage": "https://kanpurin.github.io/RandomGenerator/",
   "name": "test_wasm",
   "version": "0.1.0",
   "private": true,
