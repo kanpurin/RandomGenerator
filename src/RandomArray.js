@@ -3,65 +3,7 @@ import React, { useState, useEffect } from "react";
 import HowTo from "./HowTo";
 import Loading from "./Loading";
 import Result from "./Result";
-
-function int2str(n1, n2) {
-  if (n1 > 0) {
-    return String(n1) + ('000000000'+n2).slice(-9);
-  }
-  else if (n1 < 0) {
-    n1 = -n1;
-    n2 = -n2;
-    return '-' + String(n1) + ('000000000'+n2).slice(-9);
-  }
-  else {
-    return String(n2);
-  }
-}
-
-function str2int1(str) {
-  if (str.length === 0) return 0;
-  if (str.length <= 10 && str[0] === '-') {
-    return 0;
-  }
-  else if (str.length <= 9 && str[0] !== '-') {
-    return 0;
-  }
-  else {
-    return Number(str.slice(0,-9));
-  }
-}
-
-function str2int2(str) {
-  if (str.length === 0) return 0;
-  if (str.length <= 10 && str[0] === '-') {
-    return Number(str);
-  }
-  else if (str.length <= 9 && str[0] !== '-') {
-    return Number(str);
-  }
-  else if (str[0] === '-') {
-    return -Number(str.slice(-9));
-  }
-  else {
-    return Number(str.slice(-9));
-  }
-}
-
-// n < m
-function isLtLL(n1, n2, m1, m2) {
-  if (n1 < m1) return true;
-  if (n1 > m1) return false;
-  if (n2 < m2) return true;
-  else return false;
-}
-
-// n > m
-function isGtLL(n1, n2, m1, m2) {
-  if (n1 > m1) return true;
-  if (n1 < m1) return false;
-  if (n2 > m2) return true;
-  else return false;
-}
+import { int2str, str2int1, str2int2, isLtLL, isGtLL } from './int64'
 
 function RandomArray() {
   const [isLoading, setIsLoading] = useState(false);
