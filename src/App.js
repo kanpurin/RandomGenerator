@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from "react";
+import React from "react";
 import './App.css'
 import RandomArray from './RandomArray'
 import RandomBalancedBracketSequences from './RandomBalancedBracketSequences'
