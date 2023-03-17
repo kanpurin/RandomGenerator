@@ -3,6 +3,7 @@ import './App.css'
 import RandomArray from './RandomArray'
 import RandomBalancedBracketSequences from './RandomBalancedBracketSequences'
 import RandomLabeledTree from './RandomLabeledTree'
+import RandomPrime from './RandomPrime'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <RandomArray />
       <RandomBalancedBracketSequences />
       <RandomLabeledTree />
+      <RandomPrime />
 		</div>
   );
 }
