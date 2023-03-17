@@ -1,0 +1,19 @@
+#copybutton {
+    position: relative;
+    display: flex;
+    display: inline-block;
+    z-index: 10;
+}
+
+.tooltip-top {
+    position: absolute;
+    width: max-content;
+    max-width: 200px;
+    top: -3px;
+    left: 50%;
+    transform: translate(-50%,-100%);
+    background-color: black;
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+}

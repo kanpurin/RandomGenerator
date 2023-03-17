@@ -56,13 +56,13 @@ function RandomArrayDistinct({setIsLoading}) {
   }
 
   const doChange = (event) => {
-    setNum(event.target.value)
+    setNum(Number(event.target.value));
   }
   const doChangeLower = (event) => {
-    setLower(event.target.value)
+    setLower(Number(event.target.value));
   }
   const doChangeUpper = (event) => {
-    setUpper(event.target.value)
+    setUpper(Number(event.target.value));
   }
 
 	return (

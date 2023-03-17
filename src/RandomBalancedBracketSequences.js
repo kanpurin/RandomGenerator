@@ -51,7 +51,7 @@ function RandomBalancedBracketSequences() {
   }, [num]);
 
   const doChange = (event) => {
-    setNum(event.target.value)
+    setNum(Number(event.target.value));
   }
 
 	return (

@@ -45,7 +45,7 @@ function RandomArrayNotDistinct({setIsLoading}) {
 
     Module._randomArray(buffer, length, lower, upper);
 
-    let ret = []
+    let ret = [];
     for (let i = 0; i < length; i++) {
       ret.push(Module.getValue(buffer + i*nByte, 'i32'));
     }
@@ -55,13 +55,13 @@ function RandomArrayNotDistinct({setIsLoading}) {
   }
   
   const doChange = (event) => {
-    setNum(event.target.value)
+    setNum(Number(event.target.value));
   }
   const doChangeLower = (event) => {
-    setLower(event.target.value)
+    setLower(Number(event.target.value));
   }
   const doChangeUpper = (event) => {
-    setUpper(event.target.value)
+    setUpper(Number(event.target.value));
   }
 
   // const doMouseOver = () => {

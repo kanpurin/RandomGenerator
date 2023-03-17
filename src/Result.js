@@ -1,8 +1,10 @@
 /* eslint no-undef: 0 */
-import React from "react";
+import React, { useState } from "react";
 import ToolTip from "./ToolTip";
+import './Result.css'
 
 function Result(props) {
+	const [show, setShow] = useState(false);
   const text = "copy";
 
   const textTrim = (text, wordCount) => {
@@ -19,17 +21,22 @@ function Result(props) {
 	}
 
 	return (
-    <div className="input-group m-3">
-      <textarea className="form-control" value={textTrim(props.array.join(props.separate),1000)} rows={props.rows} readOnly/>
-      {/* <ToolTip content={text} position='top'>
-        <button type="button" className="btn btn-outline-secondary" onClick={() => doCopy(props.array.join(props.separate))}>
+    <>
+      <div className="input-group m-3">
+        <textarea className="form-control" value={textTrim(props.array.join(props.separate),1000)} rows={props.rows} readOnly/>
+        <button 
+          type="button" 
+          className="btn btn-outline-secondary" 
+          id="copybutton"
+          onClick={() => doCopy(props.array.join(props.separate))}
+          onMouseEnter={() => {setShow(true)}}
+          onMouseLeave={() => {setShow(false)}}
+        >
           <i className="bi-clipboard-plus"></i>
+          { show && <div className='tooltip-top'>{text}</div> }
         </button>
-      </ToolTip> */}
-      <button type="button" className="btn btn-outline-secondary" onClick={() => doCopy(props.array.join(props.separate))}>
-        <i className="bi-clipboard-plus"></i>
-      </button>
-    </div>
+      </div>
+    </>
 	)
 }
 
