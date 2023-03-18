@@ -4,6 +4,7 @@ import RandomArray from './RandomArray'
 import RandomBalancedBracketSequences from './RandomBalancedBracketSequences'
 import RandomLabeledTree from './RandomLabeledTree'
 import RandomPrime from './RandomPrime'
+import RandomGraph from "./RandomGraph";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <RandomArray />
       <RandomBalancedBracketSequences />
       <RandomLabeledTree />
+      <RandomGraph />
       <RandomPrime />
 		</div>
   );
