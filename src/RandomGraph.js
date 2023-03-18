@@ -11,7 +11,7 @@ function RandomGraph() {
   const [array, setArray] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
-  const min_num_vertex = 0;
+  const min_num_vertex = 1;
   const max_num_vertex = 200000;
   const min_num_edge = 0;
   const max_num_edge = 200000;

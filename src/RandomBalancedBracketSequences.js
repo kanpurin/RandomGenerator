@@ -9,7 +9,7 @@ function RandomBalancedBracketSequences() {
   const [illegal, setIllegal] = useState(false);
   const [array, setArray] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const min_num = 0;
+  const min_num = 1;
   const max_num = 100000;
 
   const howtotext = "長さ2Nの括弧列を一様ランダムに生成します"
