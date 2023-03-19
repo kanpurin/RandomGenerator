@@ -16,7 +16,6 @@ function RandomLabeledTree() {
 
   // 生成
   const doClick = () => {
-    setIsLoading(true);
     const nByte = 4;
     const length = num;
     const buffer = Module._malloc(length *2* nByte);
@@ -39,7 +38,6 @@ function RandomLabeledTree() {
     }
     setArray(ret);
     Module._free(buffer);
-    setIsLoading(false);
   }
 
   // チェック
