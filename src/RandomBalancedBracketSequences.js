@@ -64,9 +64,9 @@ function RandomBalancedBracketSequences() {
 				<input type="number" className="form-control col" onChange={doChange} placeholder="N"/>
         {
           illegal ?
-            <input type="submit" value="生成" className="btn btn-primary btn col-1" disabled/>
+            <button type="button" className="btn btn-primary btn col-1" disabled>生成</button>
           :
-				    <input type="submit" value="生成" className="btn btn-primary btn col-1" onClick={doClick}/>
+            <button type="button" className="btn btn-primary btn col-1" onClick={doClick}>生成</button>
         }
 			</div>
       <Result array={array} separate="" rows="1"/>

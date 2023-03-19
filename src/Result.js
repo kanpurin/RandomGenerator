@@ -1,6 +1,6 @@
 /* eslint no-undef: 0 */
 import React, { useState } from "react";
-import ToolTip from "./ToolTip";
+// import ToolTip from "./ToolTip";
 import './Result.css'
 
 function Result(props) {
