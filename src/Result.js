@@ -22,7 +22,7 @@ function Result(props) {
 
 	return (
     <>
-      <div className="input-group m-3">
+      <div className="input-group mb-3">
         <textarea className="form-control" value={textTrim(props.array.join(props.separate),1000)} rows={props.rows} readOnly/>
         <button 
           type="button" 

@@ -94,7 +94,7 @@ function RandomArray() {
       <HowTo content={howtotext} />
       { isLoading && <Loading /> }
 
-      <div className="form-check m-3">
+      <div className="form-check mb-3">
         <input 
           type="checkbox" 
           className="form-check-input"
@@ -105,13 +105,13 @@ function RandomArray() {
           重複なし
         </label>
       </div>
-			<div className="input-group m-3">
+			<div className="input-group mb-3">
 				<input type="number" className="form-control col" onChange={doChange} placeholder="N"/>
 				<input type="number" className="form-control col" onKeyUp={doKeyUpLower} placeholder="下限"/>
 				<input type="number" className="form-control col" onKeyUp={doKeyUpUpper} placeholder="上限"/>
         {
           illegal ?
-            <button type="button" className="btn btn-primary btn col-1" disabled>生成</button>
+            <button type="button" className="btn btn-primary btn col-1" disabled></button>
           :
             <button type="button" className="btn btn-primary btn col-1" onClick={doClick}>生成</button>
         }
