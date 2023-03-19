@@ -1,7 +1,7 @@
 /* eslint no-undef: 0 */
 import React, { useState, useEffect } from "react";
-import Result from './Result'
-import HowTo from "./HowTo";
+import Result from './Result';
+import Title from "./Title";
 
 function RandomLabeledTree() {
   const [num, setNum] = useState(0);
@@ -59,8 +59,7 @@ function RandomLabeledTree() {
 
 	return (
 		<div className='container'>
-      <h2 className='d-inline'>{title}</h2>
-      <HowTo content={howtotext} />
+      <Title title={title} howtotext={howtotext} />
     
       <div className="form-check mb-3">
         <input 

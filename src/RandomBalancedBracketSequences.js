@@ -1,7 +1,7 @@
 /* eslint no-undef: 0 */
 import React, { useState, useEffect } from "react";
 import Result from './Result'
-import HowTo from "./HowTo";
+import Title from "./Title";
 
 function RandomBalancedBracketSequences() {
   const [num, setNum] = useState(0);
@@ -9,8 +9,8 @@ function RandomBalancedBracketSequences() {
   const [array, setArray] = useState([]);
   const min_num = 1;
   const max_num = 100000;
-
-  const howtotext = "長さ2Nの括弧列を一様ランダムに生成します"
+  const title = "括弧列";
+  const howtotext = "長さ2Nの括弧列を一様ランダムに生成します";
 
   // 生成
   const doClick = () => {
@@ -52,8 +52,7 @@ function RandomBalancedBracketSequences() {
 
 	return (
 		<div className='container'>
-      <h2 className='d-inline'>括弧列</h2>
-      <HowTo content={howtotext} />
+      <Title title={title} howtotext={howtotext} />
 
 			<div className="input-group mb-3">
 				<input type="number" className="form-control col" onChange={doChange} placeholder="N"/>

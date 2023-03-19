@@ -1,7 +1,7 @@
 /* eslint no-undef: 0 */
 import React, { useState, useEffect } from "react";
 import Result from './Result'
-import HowTo from "./HowTo";
+import Title from "./Title";
 
 function RandomGraph() {
   const [numVertex, setNumVertex] = useState(0);
@@ -70,8 +70,7 @@ function RandomGraph() {
 
 	return (
 		<div className='container'>
-      <h2 className='d-inline'>{title}</h2>
-      <HowTo content={howtotext} />
+      <Title title={title} howtotext={howtotext} />
     
       <div className="form-check mb-3">
         <input 

@@ -1,6 +1,6 @@
 /* eslint no-undef: 0 */
 import React, { useState, useEffect } from "react";
-import HowTo from "./HowTo";
+import Title from "./Title";
 import Result from "./Result";
 import { int2str, str2int1, str2int2, isLtLL, isGtLL } from './int64'
 
@@ -16,7 +16,8 @@ function RandomPrime() {
   const max_lower1 = 1000000000, max_lower2 = 0;
   const min_upper1 = 0, min_upper2 = 2;
   const max_upper1 = 1000000000, max_upper2 = 0;
-  const howtotext = "(下限)以上(上限)以下の素数を一様ランダムに生成します"
+  const title = "素数";
+  const howtotext = "(下限)以上(上限)以下の素数を一様ランダムに生成します";
 
   const doClick = () => {
     const nByte = 4;
@@ -67,8 +68,7 @@ function RandomPrime() {
 
 	return (
 		<div className='container'>
-      <h2 className='d-inline'>素数</h2>
-      <HowTo content={howtotext} />
+      <Title title={title} howtotext={howtotext} />
 
 			<div className="input-group mb-3">
 				<input type="number" className="form-control col" onKeyUp={doKeyUpLower} placeholder="下限"/>

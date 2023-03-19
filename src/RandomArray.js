@@ -1,6 +1,6 @@
 /* eslint no-undef: 0 */
 import React, { useState, useEffect } from "react";
-import HowTo from "./HowTo";
+import Title from "./Title";
 import Result from "./Result";
 import { int2str, str2int1, str2int2, isLtLL, isGtLL } from './int64'
 
@@ -19,7 +19,8 @@ function RandomArray() {
   const max_lower1 = 1000000000, max_lower2 = 0;
   const min_upper1 = -1000000000, min_upper2 = 0;
   const max_upper1 = 1000000000, max_upper2 = 0;
-  const howtotext = "(下限)以上(上限)以下の整数を一様ランダムにN個生成します"
+  const title="数列";
+  const howtotext = "(下限)以上(上限)以下の整数を一様ランダムにN個生成します";
 
   const doClick = () => {
     const nByte = 4;
@@ -86,8 +87,7 @@ function RandomArray() {
 
 	return (
 		<div className='container'>
-      <h2 className='d-inline'>数列</h2>
-      <HowTo content={howtotext} />
+      <Title title={title} howtotext={howtotext} />
 
       <div className="form-check mb-3">
         <input 
