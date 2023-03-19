@@ -1,12 +1,10 @@
 /* eslint no-undef: 0 */
 import React, { useState, useEffect } from "react";
 import HowTo from "./HowTo";
-import Loading from "./Loading";
 import Result from "./Result";
 import { int2str, str2int1, str2int2, isLtLL, isGtLL } from './int64'
 
 function RandomPrime() {
-  const [isLoading, setIsLoading] = useState(false);
   const [lower1, setLower1] = useState(0);
   const [lower2, setLower2] = useState(0);
   const [upper1, setUpper1] = useState(0);
@@ -21,7 +19,6 @@ function RandomPrime() {
   const howtotext = "(下限)以上(上限)以下の素数を一様ランダムに生成します"
 
   const doClick = () => {
-    setIsLoading(true);
     const nByte = 4;
     const length = 2;
     const buffer = Module._malloc(length * nByte);
@@ -34,7 +31,6 @@ function RandomPrime() {
     setArray(ret);
 
     Module._free(buffer);
-    setIsLoading(false);
   }
 
   // チェック
@@ -73,7 +69,6 @@ function RandomPrime() {
 		<div className='container'>
       <h2 className='d-inline'>素数</h2>
       <HowTo content={howtotext} />
-      { isLoading && <Loading /> }
 
 			<div className="input-group mb-3">
 				<input type="number" className="form-control col" onKeyUp={doKeyUpLower} placeholder="下限"/>

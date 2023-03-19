@@ -1,12 +1,10 @@
 /* eslint no-undef: 0 */
 import React, { useState, useEffect } from "react";
 import HowTo from "./HowTo";
-import Loading from "./Loading";
 import Result from "./Result";
 import { int2str, str2int1, str2int2, isLtLL, isGtLL } from './int64'
 
 function RandomArray() {
-  const [isLoading, setIsLoading] = useState(false);
   const [isDistinct, setIsDistinct] = useState(false);
   const [num, setNum] = useState(0);
   const [lower1, setLower1] = useState(0);
@@ -24,7 +22,6 @@ function RandomArray() {
   const howtotext = "(下限)以上(上限)以下の整数を一様ランダムにN個生成します"
 
   const doClick = () => {
-    setIsLoading(true);
     const nByte = 4;
     const length = num*2;
     const buffer = Module._malloc(length * nByte);
@@ -44,7 +41,6 @@ function RandomArray() {
     setArray(ret);
 
     Module._free(buffer);
-    setIsLoading(false);
   }
 
   // チェック
@@ -92,7 +88,6 @@ function RandomArray() {
 		<div className='container'>
       <h2 className='d-inline'>数列</h2>
       <HowTo content={howtotext} />
-      { isLoading && <Loading /> }
 
       <div className="form-check mb-3">
         <input 

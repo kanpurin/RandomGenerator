@@ -2,13 +2,11 @@
 import React, { useState, useEffect } from "react";
 import Result from './Result'
 import HowTo from "./HowTo";
-import Loading from "./Loading";
 
 function RandomLabeledTree() {
   const [num, setNum] = useState(0);
   const [illegal, setIllegal] = useState(false);
   const [array, setArray] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
   const min_num = 1;
   const max_num = 200000;
@@ -63,7 +61,6 @@ function RandomLabeledTree() {
 		<div className='container'>
       <h2 className='d-inline'>{title}</h2>
       <HowTo content={howtotext} />
-      { isLoading && <Loading /> }
     
       <div className="form-check mb-3">
         <input 

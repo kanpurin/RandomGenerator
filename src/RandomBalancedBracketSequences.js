@@ -2,13 +2,11 @@
 import React, { useState, useEffect } from "react";
 import Result from './Result'
 import HowTo from "./HowTo";
-import Loading from "./Loading";
 
 function RandomBalancedBracketSequences() {
   const [num, setNum] = useState(0);
   const [illegal, setIllegal] = useState(false);
   const [array, setArray] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
   const min_num = 1;
   const max_num = 100000;
 
@@ -16,7 +14,6 @@ function RandomBalancedBracketSequences() {
 
   // 生成
   const doClick = () => {
-    setIsLoading(true);
     const nByte = 4;
     const length = num;
     const buffer = Module._malloc(length * 2 * nByte);
@@ -36,7 +33,6 @@ function RandomBalancedBracketSequences() {
     setArray(ret);
 
     Module._free(buffer);
-    setIsLoading(false);
   }
 
   // チェック
@@ -58,7 +54,6 @@ function RandomBalancedBracketSequences() {
 		<div className='container'>
       <h2 className='d-inline'>括弧列</h2>
       <HowTo content={howtotext} />
-      { isLoading && <Loading /> }
 
 			<div className="input-group mb-3">
 				<input type="number" className="form-control col" onChange={doChange} placeholder="N"/>
