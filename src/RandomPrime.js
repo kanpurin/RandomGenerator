@@ -80,9 +80,9 @@ function RandomPrime() {
 				<input type="number" className="form-control col" onKeyUp={doKeyUpUpper} placeholder="上限"/>
         {
           illegal ?
-            <button type="button" className="btn btn-primary btn col-1" disabled>生成</button>
+            <button type="button" className="btn btn-primary btn" disabled>生成</button>
           :
-            <button type="button" className="btn btn-primary btn col-1" onClick={doClick}>生成</button>
+            <button type="button" className="btn btn-primary btn" onClick={doClick}>生成</button>
         }
 			</div>
       <Result array={array} separate=" " rows="1"/>
