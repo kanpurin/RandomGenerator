@@ -70,7 +70,7 @@ function RandomPrime() {
 		<div className='container'>
       <Title title={title} howtotext={howtotext} />
 
-			<div className="input-group mb-3">
+			<div className="input-group my-3">
 				<input type="number" className="form-control col" onKeyUp={doKeyUpLower} placeholder="下限"/>
 				<input type="number" className="form-control col" onKeyUp={doKeyUpUpper} placeholder="上限"/>
         {

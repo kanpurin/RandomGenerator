@@ -89,7 +89,7 @@ function RandomArray() {
 		<div className='container'>
       <Title title={title} howtotext={howtotext} />
 
-      <div className="form-check mb-3">
+      <div className="form-check my-3">
         <input 
           type="checkbox" 
           className="form-check-input"
@@ -100,7 +100,7 @@ function RandomArray() {
           重複なし
         </label>
       </div>
-			<div className="input-group mb-3">
+			<div className="input-group my-3">
 				<input type="number" className="form-control col" onChange={doChange} placeholder="N"/>
 				<input type="number" className="form-control col" onKeyUp={doKeyUpLower} placeholder="下限"/>
 				<input type="number" className="form-control col" onKeyUp={doKeyUpUpper} placeholder="上限"/>

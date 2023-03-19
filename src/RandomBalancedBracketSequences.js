@@ -54,7 +54,7 @@ function RandomBalancedBracketSequences() {
 		<div className='container'>
       <Title title={title} howtotext={howtotext} />
 
-			<div className="input-group mb-3">
+			<div className="input-group my-3">
 				<input type="number" className="form-control col" onChange={doChange} placeholder="N"/>
         {
           illegal ?

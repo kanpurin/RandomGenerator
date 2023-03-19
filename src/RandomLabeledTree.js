@@ -59,7 +59,7 @@ function RandomLabeledTree() {
 		<div className='container'>
       <Title title={title} howtotext={howtotext} />
     
-      <div className="form-check mb-3">
+      <div className="form-check my-3">
         <input 
           type="checkbox" 
           className="form-check-input"
@@ -71,7 +71,7 @@ function RandomLabeledTree() {
         </label>
       </div>
 
-			<div className="input-group mb-3">
+			<div className="input-group my-3">
 				<input type="number" className="form-control col" onChange={doChange} placeholder="N"/>
         {
           illegal ?

@@ -72,7 +72,7 @@ function RandomGraph() {
 		<div className='container'>
       <Title title={title} howtotext={howtotext} />
     
-      <div className="form-check mb-3">
+      <div className="form-check my-3">
         <input 
           type="checkbox" 
           className="form-check-input"
@@ -84,7 +84,7 @@ function RandomGraph() {
         </label>
       </div>
 
-			<div className="input-group mb-3">
+			<div className="input-group my-3">
 				<input type="number" className="form-control col" onChange={doChangeNumVertex} placeholder="N"/>
 				<input type="number" className="form-control col" onChange={doChangeNumEdge} placeholder="M"/>
         {
