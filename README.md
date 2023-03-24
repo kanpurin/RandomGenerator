@@ -8,4 +8,5 @@
 |  括弧列  |  長さ $2N$ の括弧列を一様ランダムに生成<br>$1\leq N\leq 10^5$  |
 |  ラベル付き木  |  頂点数 $N$ のラベル付き木を一様ランダムに生成<br>$1\leq N\leq 2\times 10^5$  |
 |  単純グラフ  |  頂点数 $N$ 辺数 $M$ の単純グラフを一様ランダムに生成<br>$1\leq N\leq 2\times 10^5$<br>$0\leq M\leq \min(2\times 10^5,N(N-1)/2)$  |
+|  単純連結グラフ  |  頂点数 $N$ 辺数 $M$ の単純連結グラフをランダムに生成<br>[更生近似法を用いたランダム生成アルゴリズム](https://www.jstage.jst.go.jp/article/jssst/20/4/20_4_363/_pdf/-char/ja)<br>$1\leq N\leq 2\times 10^5$<br>$0\leq M\leq \min(2\times 10^5,N(N-1)/2)$  |
 |  素数  |  (下限)以上(上限)以下の素数を一様ランダムに生成<br>$2\leq$ (下限) $\leq$ (上限) $\leq 10^{18}$  |
