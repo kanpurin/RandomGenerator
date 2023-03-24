@@ -3,11 +3,16 @@ import React, { useState, useEffect } from "react";
 import Result from './Result';
 import Title from "./Title";
 
+import SetSeed from "./SetSeed";
+
 function RandomLabeledTree() {
   const [num, setNum] = useState(0);
   const [illegal, setIllegal] = useState(false);
   const [array, setArray] = useState([]);
-  const [isChecked, setIsChecked] = useState(false);
+  const [isPrePrint, setIsPrePrint] = useState(false);
+  const [seed, setSeed] = useState(0);
+  const [isSetSeed, setIsSetSeed] = useState(false);
+
   const min_num = 1;
   const max_num = 200000;
 
@@ -16,6 +21,9 @@ function RandomLabeledTree() {
 
   // 生成
   const doClick = () => {
+    if (isSetSeed) {
+      Module._setSeed(seed);
+    }
     const nByte = 4;
     const length = num;
     const buffer = Module._malloc(length *2* nByte);
@@ -23,7 +31,7 @@ function RandomLabeledTree() {
     Module._randomLabeledTree(buffer, length);
 
     let ret = []
-    if (isChecked) {
+    if (isPrePrint) {
       ret.push(length + ' ' + (length-1) + '\n');
     }
     for (let i = 0; i < length-1; i++) {
@@ -59,17 +67,31 @@ function RandomLabeledTree() {
 		<div className='container'>
       <Title title={title} howtotext={howtotext} />
     
-      <div className="form-check my-3">
+      <div className="form-check">
         <input 
           type="checkbox" 
           className="form-check-input"
-          checked={isChecked} 
-          onChange={() => setIsChecked(prevState => !prevState)} 
+          checked={isPrePrint} 
+          onChange={() => setIsPrePrint(prevState => !prevState)} 
         />
         <label className="form-check-label">
           "N N-1"を先頭に付ける
         </label>
       </div>
+      <div className="form-check">
+        <input 
+          type="checkbox" 
+          className="form-check-input"
+          checked={isSetSeed} 
+          onChange={() => setIsSetSeed(prevState => !prevState)} 
+        />
+        <label className="form-check-label">
+          Seed値を設定する
+        </label>
+      </div>
+      { isSetSeed && 
+        <SetSeed setSeed={setSeed}/>
+      }
 
 			<div className="input-group my-3">
 				<input type="number" className="form-control col" onChange={doChange} placeholder="N"/>

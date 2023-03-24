@@ -1,10 +1,11 @@
 import React from "react";
-import './App.css'
-import RandomArray from './RandomArray'
-import RandomBalancedBracketSequences from './RandomBalancedBracketSequences'
-import RandomLabeledTree from './RandomLabeledTree'
-import RandomPrime from './RandomPrime'
+import './App.css';
+import RandomArray from './RandomArray';
+import RandomBalancedBracketSequences from './RandomBalancedBracketSequences';
+import RandomLabeledTree from './RandomLabeledTree';
+import RandomPrime from './RandomPrime';
 import RandomGraph from "./RandomGraph";
+import RandomConnectedGraph from './RandomConnectedGraph';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <RandomBalancedBracketSequences />
       <RandomLabeledTree />
       <RandomGraph />
+      <RandomConnectedGraph />
       <RandomPrime />
 		</div>
   );

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Title from "./Title";
 import Result from "./Result";
+import SetSeed from "./SetSeed";
 import { int2str, str2int1, str2int2, isLtLL, isGtLL } from './int64'
 
 function RandomArray() {
@@ -12,6 +13,8 @@ function RandomArray() {
   const [upper1, setUpper1] = useState(0);
   const [upper2, setUpper2] = useState(0);
   const [illegal, setIllegal] = useState(false);
+  const [seed, setSeed] = useState(0);
+  const [isSetSeed, setIsSetSeed] = useState(false);
   const [array, setArray] = useState([]);
 
   const min_num = 1, max_num = 500000;
@@ -23,6 +26,10 @@ function RandomArray() {
   const howtotext = "(下限)以上(上限)以下の整数を一様ランダムにN個生成します";
 
   const doClick = () => {
+    if (isSetSeed) {
+      Module._setSeed(seed);
+    }
+    
     const nByte = 4;
     const length = num*2;
     const buffer = Module._malloc(length * nByte);
@@ -89,7 +96,7 @@ function RandomArray() {
 		<div className='container'>
       <Title title={title} howtotext={howtotext} />
 
-      <div className="form-check my-3">
+      <div className="form-check">
         <input 
           type="checkbox" 
           className="form-check-input"
@@ -100,6 +107,21 @@ function RandomArray() {
           重複なし
         </label>
       </div>
+      <div className="form-check">
+        <input 
+          type="checkbox" 
+          className="form-check-input"
+          checked={isSetSeed} 
+          onChange={() => setIsSetSeed(prevState => !prevState)} 
+        />
+        <label className="form-check-label">
+          Seed値を設定する
+        </label>
+      </div>
+      { isSetSeed && 
+        <SetSeed setSeed={setSeed}/>
+      }
+
 			<div className="input-group my-3">
 				<input type="number" className="form-control col" onChange={doChange} placeholder="N"/>
 				<input type="number" className="form-control col" onKeyUp={doKeyUpLower} placeholder="下限"/>

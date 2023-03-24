@@ -2,13 +2,17 @@
 import React, { useState, useEffect } from "react";
 import Result from './Result'
 import Title from "./Title";
+import SetSeed from "./SetSeed";
 
 function RandomGraph() {
   const [numVertex, setNumVertex] = useState(0);
   const [numEdge, setNumEdge] = useState(0);
   const [illegal, setIllegal] = useState(false);
   const [array, setArray] = useState([]);
-  const [isChecked, setIsChecked] = useState(false);
+  const [isPrePrint, setIsPrePrint] = useState(false);
+  const [seed, setSeed] = useState(0);
+  const [isSetSeed, setIsSetSeed] = useState(false);
+
   const min_num_vertex = 1;
   const max_num_vertex = 200000;
   const min_num_edge = 0;
@@ -19,6 +23,10 @@ function RandomGraph() {
 
   // 生成
   const doClick = () => {
+    if (isSetSeed) {
+      Module._setSeed(seed);
+    }
+
     const nByte = 4;
     const length = numEdge * 2;
     const buffer = Module._malloc(length * nByte);
@@ -26,7 +34,7 @@ function RandomGraph() {
     Module._randomGraph(buffer, numVertex, numEdge);
 
     let ret = []
-    if (isChecked) {
+    if (isPrePrint) {
       ret.push(numVertex + ' ' + numEdge + '\n');
     }
     for (let i = 0; i < numEdge; i++) {
@@ -72,17 +80,31 @@ function RandomGraph() {
 		<div className='container'>
       <Title title={title} howtotext={howtotext} />
     
-      <div className="form-check my-3">
+      <div className="form-check">
         <input 
           type="checkbox" 
           className="form-check-input"
-          checked={isChecked} 
-          onChange={() => setIsChecked(prevState => !prevState)} 
+          checked={isPrePrint} 
+          onChange={() => setIsPrePrint(prevState => !prevState)} 
         />
         <label className="form-check-label">
           "N M"を先頭に付ける
         </label>
       </div>
+      <div className="form-check">
+        <input 
+          type="checkbox" 
+          className="form-check-input"
+          checked={isSetSeed} 
+          onChange={() => setIsSetSeed(prevState => !prevState)} 
+        />
+        <label className="form-check-label">
+          Seed値を設定する
+        </label>
+      </div>
+      { isSetSeed && 
+        <SetSeed setSeed={setSeed}/>
+      }
 
 			<div className="input-group my-3">
 				<input type="number" className="form-control col" onChange={doChangeNumVertex} placeholder="N"/>
