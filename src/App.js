@@ -1,5 +1,7 @@
 import React from "react";
 import './App.css';
+import Header from "./Header";
+import Footer from "./Footer";
 import RandomArray from './RandomArray';
 import RandomBalancedBracketSequences from './RandomBalancedBracketSequences';
 import RandomLabeledTree from './RandomLabeledTree';
@@ -10,13 +12,14 @@ import RandomConnectedGraph from './RandomConnectedGraph';
 function App() {
   return (
 		<div>
-			<h1 className='bg-primary text-white display-4'>Random Generator</h1>
+      <Header />
       <RandomArray />
       <RandomBalancedBracketSequences />
       <RandomLabeledTree />
       <RandomGraph />
       <RandomConnectedGraph />
       <RandomPrime />
+      <Footer />
 		</div>
   );
 }
