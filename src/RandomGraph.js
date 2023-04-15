@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Result from './Result'
 import Title from "./Title";
 import SetSeed from "./SetSeed";
+import DrawUndirectedGraph from "./DrawUndirectedGraph";
 
 function RandomGraph() {
   const [numVertex, setNumVertex] = useState(0);
@@ -12,6 +13,9 @@ function RandomGraph() {
   const [isPrePrint, setIsPrePrint] = useState(false);
   const [seed, setSeed] = useState(0);
   const [isSetSeed, setIsSetSeed] = useState(false);
+  const [isDrawGraph, setIsDrawGraph] = useState(false);
+  const [nodes, setNodes] = useState([]);
+  const [edges, setEdges] = useState([]);
 
   const min_num_vertex = 1;
   const max_num_vertex = 200000;
@@ -32,14 +36,20 @@ function RandomGraph() {
     const buffer = Module._malloc(length * nByte);
 
     Module._randomGraph(buffer, numVertex, numEdge);
-
+    
     let ret = []
+    let _nodes = []
+    let _edges = []
+    for (let i = 1; i <= numVertex; i++) {
+      _nodes.push(i);
+    }
     if (isPrePrint) {
       ret.push(numVertex + ' ' + numEdge + '\n');
     }
     for (let i = 0; i < numEdge; i++) {
       let u = Module.getValue(buffer + (2*i)*nByte, 'i32');
       let v = Module.getValue(buffer + (2*i+1)*nByte, 'i32');
+      _edges.push([u,v]);
       if (i < numEdge - 1) {
         ret.push(u + ' ' + v + '\n');
       }
@@ -48,6 +58,8 @@ function RandomGraph() {
       }
     }
     setArray(ret);
+    setNodes(_nodes);
+    setEdges(_edges);
     Module._free(buffer);
   }
 
@@ -105,6 +117,17 @@ function RandomGraph() {
       { isSetSeed && 
         <SetSeed setSeed={setSeed}/>
       }
+      <div className="form-check">
+        <input 
+          type="checkbox" 
+          className="form-check-input"
+          checked={isDrawGraph} 
+          onChange={() => setIsDrawGraph(prevState => !prevState)} 
+        />
+        <label className="form-check-label">
+          グラフを描画する
+        </label>
+      </div>
 
 			<div className="input-group my-3">
 				<input type="number" className="form-control col" onChange={doChangeNumVertex} placeholder="N"/>
@@ -117,6 +140,7 @@ function RandomGraph() {
         }
 			</div>
       <Result array={array} separate="" rows="3"/>
+      { isDrawGraph && <DrawUndirectedGraph nodes={nodes} edges={edges} />}
 		</div>
 	)
 }

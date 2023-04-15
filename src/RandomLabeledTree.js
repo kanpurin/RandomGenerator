@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from "react";
 import Result from './Result';
 import Title from "./Title";
-
 import SetSeed from "./SetSeed";
+import DrawUndirectedGraph from "./DrawUndirectedGraph";
 
 function RandomLabeledTree() {
   const [num, setNum] = useState(0);
@@ -12,6 +12,9 @@ function RandomLabeledTree() {
   const [isPrePrint, setIsPrePrint] = useState(false);
   const [seed, setSeed] = useState(0);
   const [isSetSeed, setIsSetSeed] = useState(false);
+  const [isDrawGraph, setIsDrawGraph] = useState(false);
+  const [nodes, setNodes] = useState([]);
+  const [edges, setEdges] = useState([]);
 
   const min_num = 1;
   const max_num = 200000;
@@ -31,12 +34,18 @@ function RandomLabeledTree() {
     Module._randomLabeledTree(buffer, length);
 
     let ret = []
+    let _nodes = []
+    let _edges = []
+    for (let i = 1; i <= num; i++) {
+      _nodes.push(i);
+    }
     if (isPrePrint) {
       ret.push(length + ' ' + (length-1) + '\n');
     }
     for (let i = 0; i < length-1; i++) {
       let u = Module.getValue(buffer + (2*i)*nByte, 'i32');
       let v = Module.getValue(buffer + (2*i+1)*nByte, 'i32');
+      _edges.push([u,v]);
       if (i < length-2) {
         ret.push(u + ' ' + v + '\n');
       }
@@ -45,6 +54,8 @@ function RandomLabeledTree() {
       }
     }
     setArray(ret);
+    setNodes(_nodes);
+    setEdges(_edges);
     Module._free(buffer);
   }
 
@@ -92,6 +103,17 @@ function RandomLabeledTree() {
       { isSetSeed && 
         <SetSeed setSeed={setSeed}/>
       }
+      <div className="form-check">
+        <input 
+          type="checkbox" 
+          className="form-check-input"
+          checked={isDrawGraph} 
+          onChange={() => setIsDrawGraph(prevState => !prevState)} 
+        />
+        <label className="form-check-label">
+          グラフを描画する
+        </label>
+      </div>
 
 			<div className="input-group my-3">
 				<input type="number" className="form-control col" onChange={doChange} placeholder="N"/>
@@ -103,6 +125,7 @@ function RandomLabeledTree() {
         }
 			</div>
       <Result array={array} separate="" rows="3"/>
+      { isDrawGraph && <DrawUndirectedGraph nodes={nodes} edges={edges} /> }
 		</div>
 	)
 }
