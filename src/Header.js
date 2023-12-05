@@ -18,7 +18,7 @@ function Header() {
     <>
       <Navbar bg="primary" variant="dark">
         <Container fluid>
-          <Navbar.Brand href="#home" style={{ fontSize: "40px" }}>GraphVisualizer</Navbar.Brand>
+          <Navbar.Brand href="#home" style={{ fontSize: "40px" }}>RandomGenerator</Navbar.Brand>
           <Button onClick={handleShow} aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </Button>

@@ -89,4 +89,4 @@ function RandomBalancedBracketSequences() {
 	)
 }
 
-export default RandomBalancedBracketSequences
+export default RandomBalancedBracketSequences;
