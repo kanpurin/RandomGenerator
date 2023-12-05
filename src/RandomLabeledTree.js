@@ -130,4 +130,4 @@ function RandomLabeledTree() {
 	)
 }
 
-export default RandomLabeledTree
+export default RandomLabeledTree;

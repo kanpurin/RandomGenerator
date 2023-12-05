@@ -106,4 +106,4 @@ function RandomPrime() {
 	)
 }
 
-export default RandomPrime
+export default RandomPrime;

@@ -138,4 +138,4 @@ function RandomArray() {
 	)
 }
 
-export default RandomArray
+export default RandomArray;

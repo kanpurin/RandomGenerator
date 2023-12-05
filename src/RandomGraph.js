@@ -145,4 +145,4 @@ function RandomGraph() {
 	)
 }
 
-export default RandomGraph
+export default RandomGraph;

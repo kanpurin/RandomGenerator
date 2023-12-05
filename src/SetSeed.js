@@ -7,7 +7,8 @@ function SetSeed({setSeed}) {
       type="number" 
       className="form-control"
       onChange={(e) => setSeed(Number(e.target.value))} 
-      placeholder="seed"/>
+      placeholder="seed"
+    />
 	)
 }
 
