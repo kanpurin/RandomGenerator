@@ -18,7 +18,7 @@ function Header() {
     <>
       <Navbar bg="primary" variant="dark">
         <Container fluid>
-          <Navbar.Brand href="#home" style={{ fontSize: "40px" }}>RandomGenerator</Navbar.Brand>
+          <Navbar.Brand href="#home" style={{ fontSize: "40px" }}>Random Generator</Navbar.Brand>
           <Button onClick={handleShow} aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </Button>
@@ -26,7 +26,7 @@ function Header() {
       </Navbar>
       <Offcanvas show={showOffcanvas} onHide={handleClose} placement="start" target="#offcanvasDarkNavbar">
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Graph Visualizer</Offcanvas.Title>
+          <Offcanvas.Title>Random Generator</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Nav className="flex-column">
