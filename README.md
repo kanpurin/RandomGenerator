@@ -2,6 +2,16 @@
 
 [![GitHub Pages](https://img.shields.io/static/v1?label=GitHub+Pages&message=+&color=brightgreen&logo=github)](https://kanpurin.github.io/RandomGenerator/)
 
+## お知らせ
+このプロジェクトは以下の理由により開発者を募集していません。
+- コードが汚く改変が難しいため
+- ローカルで実行できないため(理由がわからない)
+- 別の非公開レポジトリに依存しているため
+
+やろうと思えば機能追加やバグ修正はできるためIssueは募集しています。
+
+## 説明
+
 |  名前  |  詳細  |
 | :----: | :---- |
 |  数列  |  (下限)以上(上限)以下の整数を一様ランダムに $N$ 個生成(重複を許すか指定可能)<br>$1\leq N\leq 5\times 10^5$<br>$-10^{18}\leq$ (下限) $\leq$ (上限) $\leq 10^{18}$  |
