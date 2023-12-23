@@ -84,7 +84,8 @@
     "rm": "rm -rf docs",
     "mv": "move build docs",
     "git": "git add . && git commit -m \"auto commit\" && git push origin master",
-    "deploy": "npm run rm && npm run build && npm run mv && npm run git"
+    "deploy": "npm run rm && npm run build && npm run mv && npm run git",
+    "test-deploy": "npm run rm && npm run build && npm run mv && git add . && git commit -m \"auto commit\" && git push"
   },
   "eslintConfig": {
     "extends": [

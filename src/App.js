@@ -8,12 +8,14 @@ import RandomLabeledTree from './RandomLabeledTree';
 import RandomPrime from './RandomPrime';
 import RandomGraph from "./RandomGraph";
 import RandomConnectedGraph from './RandomConnectedGraph';
+import RandomIncreasing from "./RandomIncreasing";
 
 function App() {
   return (
 		<div>
       <Header />
       <RandomArray />
+      <RandomIncreasing />
       <RandomBalancedBracketSequences />
       <RandomLabeledTree />
       <RandomGraph />
