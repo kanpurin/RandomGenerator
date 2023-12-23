@@ -10,6 +10,10 @@
 
 やろうと思えば機能追加やバグ修正はできるためIssueは募集しています。
 
+## WASMの有効化
+
+https://emscripten.org/docs/getting_started/downloads.html
+
 ## 説明
 
 |  名前  |  詳細  |
