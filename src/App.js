@@ -15,7 +15,7 @@ function App() {
 		<div>
       <Header />
       <RandomArray />
-      {/* <RandomIncreasing /> */}
+      <RandomIncreasing />
       <RandomBalancedBracketSequences />
       <RandomLabeledTree />
       <RandomGraph />
