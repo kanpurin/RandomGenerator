@@ -26,30 +26,30 @@ function RandomIncreasing() {
   const howtotext = "(下限)以上(上限)以下の整数からなる長さNの単調増加数列を一様ランダムに生成します";
 
   const doClick = () => {
-    if (isSetSeed) {
-      Module._setSeed(seed);
-    }
+    // if (isSetSeed) {
+    //   Module._setSeed(seed);
+    // }
     
-    const nByte = 4;
-    const length = num*2;
-    const buffer = Module._malloc(length * nByte);
+    // const nByte = 4;
+    // const length = num*2;
+    // const buffer = Module._malloc(length * nByte);
 
-    if (isStrict) {
-      Module._randomPermutationLL(buffer, num, lower1, lower2, upper1, upper2);
-    }
-    else {
-      Module._randomArrayLL(buffer, num, lower1, lower2, upper1, upper2);
-    }
+    // if (isStrict) {
+    //   Module._randomPermutationLL(buffer, num, lower1, lower2, upper1, upper2);
+    // }
+    // else {
+    //   Module._randomArrayLL(buffer, num, lower1, lower2, upper1, upper2);
+    // }
 
-    let ret = []
-    for (let i = 0; i < num; i++) {
-      ret.push(int2str(Module.getValue(buffer + i*2*nByte, 'i32'),
-                       Module.getValue(buffer + (i*2+1)*nByte, 'i32')));
-    }
-    ret.sort();
-    setArray(ret);
+    // let ret = []
+    // for (let i = 0; i < num; i++) {
+    //   ret.push(int2str(Module.getValue(buffer + i*2*nByte, 'i32'),
+    //                    Module.getValue(buffer + (i*2+1)*nByte, 'i32')));
+    // }
+    // ret.sort();
+    // setArray(ret);
 
-    Module._free(buffer);
+    // Module._free(buffer);
   }
 
   // チェック
