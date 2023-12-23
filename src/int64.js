@@ -57,19 +57,3 @@ export function isGtLL(n1, n2, m1, m2) {
   if (n2 > m2) return true;
   else return false;
 }
-
-// n+mはint64に収まる
-export function addint1(n1, n2, m1, m2) {
-  let r = n2 + m2;
-  if (r >= 1000000000) return n1+m1+1;
-  if (r <= -1000000000) return n1+m1-1;
-  return n1+m1;
-}
-
-// n+mはint64に収まる
-export function addint2(n1, n2, m1, m2) {
-  let r = n2 + m2;
-  if (r >= 1000000000) return r-1000000000;
-  if (r <= -1000000000) return r+1000000000;
-  return r;
-}
