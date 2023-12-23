@@ -1,9 +1,9 @@
 /* eslint no-undef: 0 */
-import React, { useState, useEffect } from "react";
-import Title from "./Title";
-import Result from "./Result";
-import SetSeed from "./SetSeed";
-import { int2str, str2int1, str2int2, isLtLL, isGtLL } from './int64'
+// import React, { useState, useEffect } from "react";
+// import Title from "./Title";
+// import Result from "./Result";
+// import SetSeed from "./SetSeed";
+// import { int2str, str2int1, str2int2, isLtLL, isGtLL } from './int64'
 
 function RandomIncreasing() {
   // const [isStrict, setIsStrict] = useState(false);
