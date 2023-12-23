@@ -17,7 +17,7 @@ function RandomIncreasing() {
   const [isSetSeed, setIsSetSeed] = useState(false);
   const [array, setArray] = useState([]);
 
-  const min_num = 1, max_num = 500000;
+  const min_num = 1, max_num = 300000;
   const min_lower1 = -1000000000, min_lower2 = 0;
   const max_lower1 = 1000000000, max_lower2 = 0;
   const min_upper1 = -1000000000, min_upper2 = 0;
