@@ -1,3 +1,4 @@
+// n = n1 * 10^9 + n2
 export function int2str(n1, n2) {
   if (n1 > 0) {
     return String(n1) + ('000000000'+n2).slice(-9);

@@ -46,10 +46,8 @@ function RandomIncreasing() {
       ret.push(int2str(Module.getValue(buffer + i*2*nByte, 'i32'),
                        Module.getValue(buffer + (i*2+1)*nByte, 'i32')));
     }
-    ret.sort((a, b) => {
-      const numA = BigInt(a);
-      const numB = BigInt(b);
-      return numA - numB;
+    ret.sort((a,b) => {
+      return isLtLL(str2int1(a),str2int2(a),str2int1(b),str2int2(b)) ? -1 : 1;
     });
     setArray(ret);
 
